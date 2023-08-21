@@ -19,8 +19,8 @@ export default function ProductCard({ name }) {
       }}
     >
       <CardMedia
-        sx={{ flex: 1, objectFit: "fill" }}
-        image="https://as1.ftcdn.net/v2/jpg/05/99/62/60/1000_F_599626096_iHHefX8AgWzijastvgNUETQSZ7vyG3nm.jpg"
+        sx={{ flex: 1, objectFit: "fill", height: "60%" }}
+        image="/static/no_item.png"
         title="green iguana"
         component={"img"}
       />

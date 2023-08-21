@@ -15,9 +15,7 @@ export default function LogoBox() {
       >
         <Box
           component={"img"}
-          src={
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Procter_%26_Gamble_logo.svg/640px-Procter_%26_Gamble_logo.svg.png"
-          }
+          src={"/static/logo.png"}
           sx={{
             width: "7%",
             m: 2,
