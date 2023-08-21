@@ -20,7 +20,7 @@ export default function ProductCard({ name }) {
     >
       <CardMedia
         sx={{ flex: 1, objectFit: "fill", height: "60%" }}
-        image="/static/no_item.png"
+        image="../../../static/no_item.png"
         title="green iguana"
         component={"img"}
       />

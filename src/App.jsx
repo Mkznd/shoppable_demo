@@ -18,7 +18,7 @@ const queryClient = new QueryClient({
 export default function App() {
   return (
     <StrictMode>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.DEV ? "/" : "/shoppable_demo/"}>
         <QueryClientProvider client={queryClient}>
           <header>
             <Navbar />
