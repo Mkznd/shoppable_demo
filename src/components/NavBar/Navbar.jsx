@@ -12,6 +12,12 @@ const StyledNavBarContainer = styled(Box)(({ theme }) => ({
   width: "95%",
 }));
 
+const StyledMenuButtonLink = styled(Link)(({ theme }) => ({
+  color: "#fff",
+  textDecoration: "none",
+  m: 2,
+}));
+
 export default function Navbar() {
   return (
     <AppBar position={"static"} color={"primary"}>
@@ -24,12 +30,21 @@ export default function Navbar() {
           }}
         >
           <Search />
-          <MenuItem>
-            <Typography textAlign="center">About</Typography>
-          </MenuItem>
-          <MenuItem>
-            <Typography textAlign="center">Contact</Typography>
-          </MenuItem>
+          <StyledMenuButtonLink to={"/About"}>
+            <MenuItem>
+              <Typography variant="h6" textAlign="center">
+                About
+              </Typography>
+            </MenuItem>
+          </StyledMenuButtonLink>
+
+          <StyledMenuButtonLink to={"/Contact"}>
+            <MenuItem>
+              <Typography variant="h6" textAlign="center">
+                Contact
+              </Typography>
+            </MenuItem>
+          </StyledMenuButtonLink>
         </Box>
       </StyledNavBarContainer>
     </AppBar>

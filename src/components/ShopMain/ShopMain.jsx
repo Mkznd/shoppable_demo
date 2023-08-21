@@ -1,17 +1,27 @@
 import { Box, Grid, styled } from "@mui/material";
 import ProductCard from "./ProductCard/ProductCard";
-
-const LizardNames = [
-  "mark",
-  "elon",
-  "bill",
-  "jeff",
-  "warren",
-  "larry",
-  "sergey",
-];
+import { useQuery } from "@tanstack/react-query";
+import fetchProducts from "../../react_query_fetches/fetchProducts";
 
 export default function ShopMain() {
+  const results = useQuery(["productList", 1, 10], fetchProducts);
+
+  if (results.isLoading) {
+    return (
+      <div
+        style={{
+          width: "100%",
+          textAlign: "center",
+        }}
+      >
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
+
+  const data = results.data.data;
+  console.log(data);
+
   return (
     <Grid
       container
@@ -25,10 +35,11 @@ export default function ShopMain() {
         p: 0,
       }}
     >
-      {LizardNames.map((name, index) => (
+      {data.map((product, index) => (
         <Grid
           item
           xs={4}
+          md={3}
           key={index}
           sx={{
             display: "flex",
@@ -36,7 +47,7 @@ export default function ShopMain() {
             justifyContent: "center",
           }}
         >
-          <ProductCard name={name} />
+          <ProductCard name={product.name} />
         </Grid>
       ))}
     </Grid>

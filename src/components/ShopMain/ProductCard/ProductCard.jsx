@@ -12,31 +12,56 @@ export default function ProductCard({ name }) {
     <Card
       sx={{
         maxWidth: 345,
+        display: "flex",
+        flexDirection: "column",
+        height: 420,
+        pb: "2%",
       }}
     >
       <CardMedia
-        sx={{ height: 140, objectFit: "fill" }}
+        sx={{ flex: 1, objectFit: "fill" }}
         image="https://as1.ftcdn.net/v2/jpg/05/99/62/60/1000_F_599626096_iHHefX8AgWzijastvgNUETQSZ7vyG3nm.jpg"
         title="green iguana"
         component={"img"}
       />
-      <CardContent>
+      <CardContent
+        sx={{
+          height: "10%",
+          pb: 2,
+        }}
+      >
         <Typography
-          gutterBottom
           variant="h5"
           component="div"
-          sx={{ textTransform: "capitalize" }}
+          sx={{
+            textTransform: "capitalize",
+            textOverflow: "ellipsis",
+            fontSize: { xs: 15, md: 18 },
+            mb: 2,
+            textAlign: "left",
+          }}
         >
           {name}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+      <CardActions
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "flex-end",
+          height: "10%",
+        }}
+      >
+        <Button
+          size="big"
+          variant={"contained"}
+          sx={{
+            flex: 1,
+            mt: 2,
+          }}
+        >
+          Buy
+        </Button>
       </CardActions>
     </Card>
   );
