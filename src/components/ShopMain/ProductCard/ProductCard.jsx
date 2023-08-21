@@ -56,8 +56,7 @@ export default function ProductCard({ product }) {
           size="big"
           variant={"contained"}
           onClick={() => {
-            //TODO make upc from product/literally product.upc
-            ShoppableCart({ upc: "00075609007491", variation: false });
+            ShoppableCart({ upc: `${product.upc}`, variation: false });
             console.log(product.upc);
           }}
           sx={{
