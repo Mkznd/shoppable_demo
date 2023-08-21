@@ -1,9 +1,12 @@
 {
   "name": "vite_react_setup",
   "version": "1.0.0",
+  "homepage": "https://mkznd.github.io/shoppable_demo",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
@@ -23,6 +26,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^6.0.0",
     "prettier": "^3.0.2",
     "vite": "^4.4.9"
   },
