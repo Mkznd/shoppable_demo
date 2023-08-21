@@ -47,7 +47,7 @@ export default function ShopMain() {
             justifyContent: "center",
           }}
         >
-          <ProductCard name={product.name} />
+          <ProductCard product={product} />
         </Grid>
       ))}
     </Grid>

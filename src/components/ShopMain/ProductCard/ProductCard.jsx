@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 
-export default function ProductCard({ name }) {
+export default function ProductCard({ product }) {
   return (
     <Card
       sx={{
@@ -41,7 +41,7 @@ export default function ProductCard({ name }) {
             textAlign: "left",
           }}
         >
-          {name}
+          {product.name}
         </Typography>
       </CardContent>
       <CardActions
@@ -55,6 +55,11 @@ export default function ProductCard({ name }) {
         <Button
           size="big"
           variant={"contained"}
+          onClick={() => {
+            //TODO make upc from product/literally product.upc
+            ShoppableCart({ upc: "00075609007491", variation: false });
+            console.log(product.upc);
+          }}
           sx={{
             flex: 1,
             mt: 2,
