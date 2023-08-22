@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import fetchProducts from "../../react_query_fetches/fetchProducts";
 
 export default function ShopMain() {
-  const results = useQuery(["productList", 1, 10], fetchProducts);
+  const results = useQuery(["productList", 1, 40], fetchProducts);
 
   if (results.isLoading) {
     return (
