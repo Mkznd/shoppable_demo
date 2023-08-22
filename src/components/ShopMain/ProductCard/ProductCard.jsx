@@ -6,9 +6,12 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
+import fetchImages from "../../../react_query_fetches/fetchImages";
 
 export default function ProductCard({ product }) {
-  console.log(product);
+  const results = useQuery(["productImages", product.id], fetchImages);
+
   return (
     <Card
       sx={{
@@ -21,8 +24,12 @@ export default function ProductCard({ product }) {
     >
       <CardMedia
         sx={{ flex: 1, objectFit: "fill", height: "60%" }}
-        image="https://static.thenounproject.com/png/4440881-200.png"
-        title="green iguana"
+        image={
+          results.isSuccess
+            ? results.data.data[0].url_standard
+            : "https://static.thenounproject.com/png/4440881-200.png"
+        }
+        title={`${product.name} image`}
         component={"img"}
       />
       <CardContent
@@ -59,7 +66,6 @@ export default function ProductCard({ product }) {
           onClick={() => {
             // eslint-disable-next-line no-undef
             ShoppableCart({ upc: `${product.upc}`, variation: false });
-            console.log(product.upc);
           }}
           sx={{
             flex: 1,
