@@ -19,6 +19,19 @@ export default function ShopMain() {
     );
   }
 
+  if (results.isError) {
+    return (
+      <div
+        style={{
+          width: "100%",
+          textAlign: "center",
+        }}
+      >
+        <h1>Error...</h1>
+      </div>
+    );
+  }
+
   const data = results.data.data;
   console.log(data);
 

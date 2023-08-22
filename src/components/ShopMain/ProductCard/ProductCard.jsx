@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 
 export default function ProductCard({ product }) {
+  console.log(product);
   return (
     <Card
       sx={{
@@ -56,6 +57,7 @@ export default function ProductCard({ product }) {
           size="big"
           variant={"contained"}
           onClick={() => {
+            // eslint-disable-next-line no-undef
             ShoppableCart({ upc: `${product.upc}`, variation: false });
             console.log(product.upc);
           }}

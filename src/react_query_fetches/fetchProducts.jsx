@@ -5,6 +5,7 @@ export default async function fetchProducts({ queryKey }) {
   const baseUrl = `http://127.0.0.1:8000/product-list/${pages}/${pageLimit}`;
 
   const res = await fetch(baseUrl);
+  console.log(res);
 
   if (!res.ok) {
     throw new Error(`product list for ${hash} is not ok`);

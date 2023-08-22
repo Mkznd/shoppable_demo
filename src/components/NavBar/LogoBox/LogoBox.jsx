@@ -19,7 +19,7 @@ export default function LogoBox() {
             "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Procter_%26_Gamble_logo.svg/640px-Procter_%26_Gamble_logo.svg.png"
           }
           sx={{
-            width: "7%",
+            width: { md: "5%", lg: "7%" },
             m: 2,
           }}
         />
