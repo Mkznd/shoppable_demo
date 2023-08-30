@@ -1,4 +1,4 @@
-import { Box, Grid, styled } from "@mui/material";
+import {  Grid } from "@mui/material";
 import ProductCard from "./ProductCard/ProductCard";
 import { useQuery } from "@tanstack/react-query";
 import fetchProducts from "../../react_query_fetches/fetchProducts";
@@ -41,6 +41,7 @@ export default function ShopMain() {
       spacing={2}
       columns={{ xs: 4, sm: 8, md: 12 }}
       sx={{
+          width: "80%",
         maxWidth: 1560,
         background: "#ffffff",
         mx: "auto",

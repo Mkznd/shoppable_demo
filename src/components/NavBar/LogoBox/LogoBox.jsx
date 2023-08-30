@@ -10,7 +10,7 @@ export default function LogoBox() {
           flexDirection: "row",
           alignItems: "center",
           ml: 2,
-          height: "8vh",
+          height: "10vh",
         }}
       >
         <Box
